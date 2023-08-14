@@ -1,9 +1,9 @@
-// ------>Day2<-----
+// task date:10/08/2023------>Day2 Task<-----
 
 const express = require("express");
 const app = express();
 
- 
+ // 1.validation in  body parser
 const bodyParser=require("body-parser")
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -24,6 +24,7 @@ app.post("/",(req,res)=>{
     }
 
 })
+//2. validation in  params
 app.post("/search/:name/:age",(req,res)=>{
     const name = req.params.name;
     const age=req.params.age;

@@ -2,15 +2,16 @@
   "name": "backend-task",
   "version": "1.0.0",
   "description": "",
-  "main": "Day5.js",
+  "main": "Day7.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Day5.js"
+    "start": "node Day7.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "formidable": "^3.5.0",
     "mongodb": "^5.7.0"
   }
 }

@@ -1,5 +1,33 @@
 //--------------------Todo list-----------------------
 
+// ==================>edit.ejs file<=======================================
+
+
+{/* 
+<form method="post" action="/edit">
+    Name:<input type="text" name="name" value="<%= data[0].name%>"><br/>
+    <input type="hidden" name="_id" value="<%= data[0]._id%>"><br/>
+    <input type="submit" value="Submit">
+</form> 
+*/}
+
+
+// <===========================================
+
+// ======================>index.ejs file<=================================
+{/* 
+<form method="post" action="/">
+    <h1>TODO LIST</h1>
+    <input type="text" name="name" required>
+    <input type="submit" value="Submit">
+</form>
+<% data.forEach((item) => {%>
+    <h1><%= item.name %></h1>
+    <a href="/edit/<%=item._id%>">Edit</a>
+    <a href="/<%=item._id%>">Delete</a>
+<%})%></input>
+ */}
+// ================================================
 const express=require ("express");
 const bodyParser=require("body-parser");
 const path = require('path');
@@ -81,31 +109,3 @@ app.listen(8080,() => {
 });
 
 
-// ==================>edit.ejs file<=======================================
-
-
-{/* 
-<form method="post" action="/edit">
-    Name:<input type="text" name="name" value="<%= data[0].name%>"><br/>
-    <input type="hidden" name="_id" value="<%= data[0]._id%>"><br/>
-    <input type="submit" value="Submit">
-</form> 
-*/}
-
-
-// <===========================================
-
-// ======================>index.ejs file<=================================
-{/* 
-<form method="post" action="/">
-    <h1>TODO LIST</h1>
-    <input type="text" name="name" required>
-    <input type="submit" value="Submit">
-</form>
-<% data.forEach((item) => {%>
-    <h1><%= item.name %></h1>
-    <a href="/edit/<%=item._id%>">Edit</a>
-    <a href="/<%=item._id%>">Delete</a>
-<%})%></input>
- */}
-// ================================================

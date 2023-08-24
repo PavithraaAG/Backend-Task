@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) =>{
   coll.find({}).toArray()
     .then((data)=>{
-      res.render("index_Day9",{data:data})
+      res.render("index",{data:data})
     }).catch((err)=>{
       console.log(err)
     });
@@ -79,3 +79,33 @@ app.post("/edit", (req, res)=>{
 app.listen(8080,() => {
   console.log("server is running");
 });
+
+
+// ==================>edit.ejs file<=======================================
+
+
+{/* 
+<form method="post" action="/edit">
+    Name:<input type="text" name="name" value="<%= data[0].name%>"><br/>
+    <input type="hidden" name="_id" value="<%= data[0]._id%>"><br/>
+    <input type="submit" value="Submit">
+</form> 
+*/}
+
+
+// <===========================================
+
+// ======================>index.ejs file<=================================
+{/* 
+<form method="post" action="/">
+    <h1>TODO LIST</h1>
+    <input type="text" name="name" required>
+    <input type="submit" value="Submit">
+</form>
+<% data.forEach((item) => {%>
+    <h1><%= item.name %></h1>
+    <a href="/edit/<%=item._id%>">Edit</a>
+    <a href="/<%=item._id%>">Delete</a>
+<%})%></input>
+ */}
+// ================================================
